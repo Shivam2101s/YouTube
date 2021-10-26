@@ -26,8 +26,8 @@ h1 {
   position: sticky;
 }
 .menu-bars {
-  margin-left: 2rem;
-  font-size: 2rem;
+  margin-left: 30px;
+  font-size: 30px;
   color: #fff;
 }
 #nav-menu {
@@ -38,7 +38,6 @@ h1 {
   justify-content: center;
   position: fixed;
   top: 0;
-  transition: 850ms;
 }
 #nav-menu :active {
   left: 0;
@@ -54,8 +53,8 @@ h1 {
 .nav-text a {
   text-decoration: none;
   color: #f5f5f5;
-  font-size: 1.2rem;
-  margin-left: 1rem;
+  font-size: 18px;
+  margin-left: 15px;
 }
 .nav-text:hover {
   background-color: rgba(144, 144, 144, 0.219);
@@ -65,7 +64,7 @@ h1 {
   width: 100%;
 }
 .nav-icon {
-  padding-left: 1rem;
+  padding-left: 15px;
   color: #989898;
 }
 #youtube-logo {
@@ -82,7 +81,7 @@ h1 {
 }
 #navbar-toggle h1 {
   color: #fff;
-  font-family: "Oswald", sans-serif;
+  
 }
 #navbar-toggle a {
   text-decoration: none;
@@ -98,7 +97,7 @@ h1 {
 }
 #navbar input {
   margin-left: 12%;
-  padding: 0.8rem;
+  padding: 20px;
   max-width: 100%;
   width: 40%;
   height: 47px;
@@ -120,42 +119,42 @@ h1 {
   color: #fff;
 }
 .mp {
-  padding: 0.6rem;
-  width: 4%;
+  padding: 2px;
+  width: 3%;
   background-color: #ffffff14;
-  border: none;
+ 
   color: #fff;
   border-radius: 50%;
-  height: 55px;
-  margin-left: 1%;
+  height: 50px;
+  margin-left: 10px;
 }
-.fa-microphone:before {
+.fa-microphone{
   content: "\f130";
-  font-size: 24px;
+  font-size: 20px;
 }
 .fa-video:before {
   content: "\f03d";
   font-size: 25px;
   color: #fff;
-  margin-left: 262%;
+  margin-left: 150px;
 }
 .fa-bell:before {
   content: "\f0f3";
   font-size: 25px;
   color: #fff;
-  margin-left: 470%;
+  margin-left: 40px;
 }
 .fa-th:before {
   content: "\f00a";
   font-size: 25px;
   color: #fff;
-  margin-left: 517%;
+  margin-left: 40px;
 }
 .fa-sign-in-alt:before {
   content: "\f2f6";
   font-size: 25px;
   color: #fff;
-  margin-left: 667%;
+  margin-left: 40px;
 }
 
 #videos {
