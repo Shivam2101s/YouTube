@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube</title>
+    <link
+      rel="icon"
+      href="https://i.pinimg.com/474x/d4/48/2b/d4482ba4e7ebdbff7b8ba73e7d39aceb.jpg"
+    />
+    <link
+      rel="icon"
+      href="https://e7.pngegg.com/pngimages/920/2/png-clipart-graphic-film-cinema-movie-projector-hollywood-claquete-television-photography-thumbnail.png"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #login-form {
+        width: 500px;
+        padding: 30px;
+        margin: 100px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        border: 1px solid gray;
+      }
+      #main_head {
+        font-size: 20px;
+      }
+      input {
+        width: 400px;
+        height: 60px;
+        border-radius: 5px;
+        padding: 10px;
+        outline: none;
+
+        margin-top: 10px;
+      }
+
+      form img {
+        width: 30%;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="login">
+        <form id="login-form" onsubmit="login(event)">
+          <img
+            src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png"
+            alt=""
+          />
+
+          <p id="main_head">Sign in</p>
+          <p>to continue to YouTube</p>
+
+          <input type="text" id="user" placeholder="Username" required />
+          <input type="password" id="pass" placeholder="Password" required />
+
+          <input type="submit" />
+          <p>New user <a href="./signUp.html">Sign Up</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function login(e) {
+    e.preventDefault();
+
+    let form = document.getElementById("login-form");
+
+    let user_data = {
+      username: form.user.value,
+
+      password: form.pass.value,
+    };
+
+    let data_to_send = JSON.stringify(user_data);
+
+    fetch("https://masai-api-mocker.herokuapp.com/auth/login", {
+      method: "POST",
+
+      body: data_to_send,
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        console.log("res:", res);
+        if (res.error) {
+          alert(res.message);
+        } else {
+          fetchData(user_data.username, res.token);
+        }
+      })
+      .catch((err) => {
+        console.log("err:", err);
+      });
+  }
+
+  function fetchData(username, token) {
+    fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        console.log("res:", res);
+        localStorage.setItem("userDetail", JSON.stringify(res));
+        localStorage.setItem("isLoggedIn", true);
+
+        goToHome();
+      })
+
+      .catch((err) => {
+        console.log("err:", err);
+      });
+  }
+
+  function goToHome() {
+    window.location.assign("./youtube.html");
+  }
+</script>
