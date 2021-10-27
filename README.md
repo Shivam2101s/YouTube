@@ -1,6 +1,6 @@
 # YouTube
 
-It's a very basic clone of the YouTube website. Here users can watch trending videos and also search for videos.
+It's a very basic clone of the YouTube website. Here users can watch and browse videos and also see trending videos.
 
 ## Some glimpse of the project
 <img src="https://imgdb.in/ja0W.jpg" width="100%" height="auto" />
