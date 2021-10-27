@@ -3,9 +3,9 @@
 ## Some glimpse of the project
 <img src="https://imgdb.in/ja0W.jpg" width="100%" height="auto" />
 <img src="https://imgdb.in/ja11.jpg" width="100%" height="auto" />
- Sign Up
+* Sign Up
 <img src="https://imgdb.in/ja0Z.jpg" width="100%" height="auto" />
-Sign In
+*Sign In
 <img src="https://imgdb.in/ja10.jpg" width="100%" height="auto" />
 
 ## Technology used
